@@ -1,26 +1,118 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  :root[class~="dark"] {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    
+    --muted: 340 30% 80%; /* Soft, muted pink */
+    --muted-foreground: 215.4 16.3% 56.9%;
+    
+    --accent: 340 60% 60%; /* Slightly stronger pink for accents */
+    --accent-foreground: 340 70% 95%; /* Lighter pink accent text */
+  
+    --popover: 340 70% 85%; /* Slightly darker popover background */
+    --popover-foreground: 340 40% 95%; /* Light pink popover text */
+    
+    --border: 216 34% 17%;
+    --input: 340 60% 60%; /* Medium pink for input fields */
+    
+    --card: 224 71% 4%;
+    --card-foreground: 340 50% 30%; /* Darker pink text for cards */
+    
+    --primary: 340 70% 80%; /* Primary pink */
+    --primary-foreground: 340 60% 20%; /* Darker text for primary items */
+    
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 340 70% 95%; /* Lighter pink secondary text */
+    
+    --destructive: 0 63% 31%; /* Red for destructive actions */
+    --destructive-foreground: 340 70% 95%; /* Light pink text for destructive actions */
+    
+    --ring: 340 60% 70%; /* Ring color, matching a mid-tone pink */
+    
+    --radius: 0.5rem; /* Consistent radius for rounded elements */
+  }  
+}
+
+/* Add this to your global CSS or component CSS */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); /* Start from the left side */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at the original position */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Slide and fade-in effect */
+@keyframes slideInFade {
+  0% {
+    opacity: 0;
+    transform: translateX(20%); /* Start from the left side */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at the original position */
+  }
+}
+
+/* Apply animation to sections */
+.slide-in-fade {
+  animation: slideInFade 1.5s ease-out backwards;
+}
+/* Slide and fade-in effect */
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
