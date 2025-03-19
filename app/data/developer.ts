@@ -8,6 +8,12 @@ export interface DeveloperData {
   avatar: string;
   bio: string;
   coreSkills: CoreSkill[];
+  contact: {
+    phone: string;
+    email: string;
+    linkedin: string;
+    address: string;
+  };
 }
 
 // Export the developer data with type safety
@@ -15,6 +21,14 @@ export const developerData: DeveloperData = {
   name: "Soulisack DUANGVILAY",
   role: "Back-end Developer",
   avatar: "/images/849F76EA-3652-48DF-8CA7-10DFFEF59600.jpeg",
-  bio: `Yaho!!~ 私はバックデベロッパーです ~ alex desu yoroshikune.🙂‍↕️ •without any talent, so that’s why I have to work hard. @al.ninety_eight`,
-  coreSkills: ["Node.js", "Go", "TypeScript", "PHP", "SQL", "ORM", "Java"]
+  bio: `Yaho!!~ 私はバックデベロッパーです ~ alex desu yoroshikune.🙂‍↕️`,
+
+  coreSkills: ["Node.js", "Go", "TypeScript", "PHP", "SQL", "ORM", "Java"],
+
+  contact: {
+    phone: "+8562055168040",
+    email: "soulisack2498@gmail.com",
+    linkedin: "www.linkedin.com/in/sackdvl/",
+    address: "Xaysettha District, Vientiane Capital.",
+  }
 };

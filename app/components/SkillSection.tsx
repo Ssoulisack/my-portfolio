@@ -3,10 +3,10 @@ import { skills } from "../data/skills";
 export function SkillSection() {
   return (
     <div className="slide-in-fade-left">
-      <h2 className="text-3xl font-bold mb-6">My Skills</h2>
       
       {/* Descriptions for Skill Levels */}
-      <div className="text-sm text-gray-600 mb-6">
+      <h2 className="text-3xl font-bold mb-6">My Skills</h2>
+      <div className="text-sm text-gray-500 mb-6">
         <p><strong>Beginner:</strong> Basic understanding and ability to perform simple tasks.</p>
         <p><strong>Intermediate:</strong> Good working knowledge, able to handle most tasks independently.</p>
         <p><strong>Professional:</strong> Expert-level proficiency, capable of solving complex problems efficiently.</p>

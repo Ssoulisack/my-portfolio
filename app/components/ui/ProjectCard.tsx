@@ -1,7 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Github, ExternalLink, X } from "lucide-react";
 import { SkillBadge } from "./SkillBadge";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // Define types for the project object
 export interface Project {
@@ -20,6 +22,15 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  useEffect(() => {
+      Aos.init({
+        offset: 100, // Start animation when element is 100px from viewport
+        duration: 300, // Animation duration in milliseconds
+        easing: "ease-in-out",
+        once: false, // Ensures animation runs every time element comes into view
+      });
+    }, []);
+
   return (
     <>
       <div className="aspect-square overflow-hidden relative rounded-md cursor-pointer group" onClick={() => setIsOpen(true)}>
@@ -34,7 +45,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
       {isOpen && (
-        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div data-aos="zoom-in-up" className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-background border border-border rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-background p-4 border-b border-border flex justify-between items-center">
               <h2 className="text-xl font-bold">{project.title}</h2>

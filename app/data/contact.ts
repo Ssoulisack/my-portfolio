@@ -18,15 +18,27 @@ export const contactInfo: ContactInfo = {
   social: [
     {
       name: "GitHub",
-      url: "https://github.com"
+      url: "https://github.com/Ssoulisack"
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/sackdvl/"
     },
     {
-      name: "Twitter",
-      url: "https://twitter.com"
+      name: "Facebook",
+      url: "https://www.facebook.com/LeoNelsukky"
+    },
+    {
+      name: "Tiktok",
+      url: "https://www.tiktok.com/@24.thurs?_t=ZS-8uoGnudpWxb&_r=1"
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/24.thurs/"
+    },
+    {
+      name: "Whatsapp",
+      url: "https://wa.me/8562055168040"
     }
   ]
 };

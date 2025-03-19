@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Calendar,
   MapPin,
@@ -10,6 +10,8 @@ import {
   X,
 } from "lucide-react";
 import { SkillBadge } from "./SkillBadge";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // Define the Experience interface
 interface Experience {
@@ -33,7 +35,14 @@ interface ExperienceCardProps {
 
 export function ExperienceCard({ experience, isLast }: ExperienceCardProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
+  useEffect(() => {
+    Aos.init({
+      offset: 100, // Start animation when element is 100px from viewport
+      duration: 1000, // Animation duration in milliseconds
+      easing: "ease-in-out",
+      once: false, // Ensures animation runs every time element comes into view
+    });
+  }, []);
   return (
     <div className="relative">
       {!isLast && (
@@ -50,7 +59,7 @@ export function ExperienceCard({ experience, isLast }: ExperienceCardProps) {
         <div className="flex-1 pb-8">
           <div
             onClick={() => setIsOpen(true)}
-            className="border border-border rounded-lg p-6 bg-card hover:shadow-lg transition-shadow cursor-pointer"
+            className="rounded-lg p-6 hover:shadow-2xl card-bd transition-shadow cursor-pointer"
           >
             <h3 className="text-xl font-semibold mb-2">
               {experience.position}
@@ -77,7 +86,7 @@ export function ExperienceCard({ experience, isLast }: ExperienceCardProps) {
         </div>
       </div>
       {isOpen && (
-        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div data-aos="flip-up" className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-background border border-border rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-background p-4 border-b border-border flex justify-between items-center">
               <div>

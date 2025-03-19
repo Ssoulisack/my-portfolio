@@ -1,15 +1,22 @@
+"use client";
 import { Calendar, MapPin, Award, BookOpen } from "lucide-react";
-import { Education } from "../../data/education";
+import { Education } from '../../data/education';
+import Aos from "aos";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
+
+
 export function EducationCard({ education }: { education: Education }) {
+  useEffect(() => {
+    Aos.init({
+      offset: 100, // Start animation when element is 100px from viewport
+      duration: 1000, // Animation duration in milliseconds
+      easing: "ease-in-out",
+      once: false, // Ensures animation runs every time element comes into view
+    });
+  }, []);
   return (
-    <div className="border border-border rounded-lg overflow-hidden bg-card">
-      <div className="h-48 overflow-hidden">
-        <img
-          src={education.logo}
-          alt={education.institution}
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <div data-aos="fade-up" className="border border-border rounded-lg overflow-hidden bg-card">
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{education.degree}</h3>
         <div className="space-y-3">
@@ -22,20 +29,6 @@ export function EducationCard({ education }: { education: Education }) {
             <MapPin size={16} />
             <span>{education.location}</span>
           </div>
-          <p className="text-muted-foreground">{education.description}</p>
-          {education.achievements.length > 0 && (
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <Award size={16} className="text-primary" />
-                <h4 className="font-medium">Achievements</h4>
-              </div>
-              <ul className="list-disc list-inside text-sm text-muted-foreground pl-5 space-y-1">
-                {education.achievements.map((achievement, index) => (
-                  <li key={index}>{achievement}</li>
-                ))}
-              </ul>
-            </div>
-          )}
           {education.courses.length > 0 && (
             <div className="space-y-2">
               <div className="flex items-center gap-2">

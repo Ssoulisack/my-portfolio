@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -34,9 +34,47 @@
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
+    --pink: rgb(255, 141, 198);
+    --gray: rgb(134, 133, 133);
+    --dark: rgb(177, 177, 177);
+
+    .card-bd {
+      /* border: 2px solid var(--border-pink); */
+      color: var(--gray);
+    
+      &:hover {
+        border: none; 
+        box-shadow: 3px 3px 10px var(--gray);
+      }
+    }
+    .cursor-circle {
+      border: 1px solid var(--dark);
+      box-shadow: 0 0 20px var(--dark);
+      color: var(--dark);
+    }
+    .my-name {
+      border-radius: var(--radius);
+      box-shadow: 0 0 30px var(--gray);
+      color: var(--gray);
+    }
+    .my-icon {
+      color: var(--dark);
+      &:hover {
+        color: var(--pink);
+        text-shadow: 0 0 10px var(--pink);
+      }
+    }
+    .typing {
+      color: var(--pink);
+      text-shadow: 0 0 5px var(--pink);
+    }
   }
 
   :root[class~="dark"] {
+    --white: rgb(255, 255, 255);
+    --pink: rgb(255, 141, 198);
+    --gray: rgb(99, 99, 99);
+    --dark: rgb(0, 0, 0);
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
     
@@ -50,6 +88,7 @@
     --popover-foreground: 340 40% 95%; /* Light pink popover text */
     
     --border: 216 34% 17%;
+    --border-pink: 340 60% 60%; /* Medium pink for input fields */
     --input: 340 60% 60%; /* Medium pink for input fields */
     
     --card: 224 71% 4%;
@@ -67,52 +106,46 @@
     --ring: 340 60% 70%; /* Ring color, matching a mid-tone pink */
     
     --radius: 0.5rem; /* Consistent radius for rounded elements */
+
+    .my-name {
+      border-radius: var(--radius);
+      box-shadow: 0 0 30px var(--dark);
+      color: var(--gray);
+    }
+    .my-icon {
+      color: var(--gray);
+      &:hover {
+        color: var(--pink);
+        text-shadow: 0 0 10px var(--pink);
+      }
+    }
+
+    .card-bd {
+      /* border: 2px solid var(--border-pink); */
+      color: var(--pink);
+    
+      &:hover {
+        border: none; 
+        box-shadow: 3px 3px 5px var(--pink);
+      }
+    }
+    
+    .cursor-circle {
+      border: 2px solid var(--border-pink);
+      box-shadow: 0 0 10px var(--pink);
+      color: var(--pink);
+    }
   }  
 }
 
-/* Add this to your global CSS or component CSS */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s forwards;
+* {
+  @apply border-border;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%); /* Start from the left side */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* End at the original position */
-  }
-}
-
-/* Slide and fade-in effect */
-@keyframes slideInFade {
-  0% {
-    opacity: 0;
-    transform: translateX(20%); /* Start from the left side */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* End at the original position */
-  }
-}
-
-/* Apply animation to sections */
-.slide-in-fade {
-  animation: slideInFade 1.5s ease-out backwards;
-}
-/* Slide and fade-in effect */
-
-
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
+body {
+  @apply bg-background text-foreground;
 }
