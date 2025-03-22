@@ -1,7 +1,6 @@
 "use client";
 
 import React, { ReactNode } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Home, Briefcase, Code, Mail, GraduationCap } from "lucide-react";
 
@@ -34,7 +33,6 @@ const NavLink: React.FC<NavLinkProps> = ({ href, icon, isActive = false }) => {
 };
 
 export default function Navigation() {
-    const pathname = usePathname();
     const hash = typeof window !== "undefined" ? window.location.hash : "";
 
     return (

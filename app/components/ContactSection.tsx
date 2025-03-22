@@ -36,6 +36,7 @@ export function ContactSection() {
         setResponse({ success: false, message: data.error || "Failed to send message." });
       }
     } catch (error) {
+      console.error("Error sending message:", error); // Logs the error for debugging
       setResponse({ success: false, message: "Something went wrong. Try again later." });
     }
 

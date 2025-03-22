@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Github, ExternalLink, X } from "lucide-react";
 import { SkillBadge } from "./SkillBadge";
+import Image from "next/image";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -34,7 +35,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <>
       <div className="aspect-square overflow-hidden relative rounded-md cursor-pointer group" onClick={() => setIsOpen(true)}>
-        <img
+        <Image
           src={project.coverImage}
           alt={project.title}
           className="w-full h-full object-cover transition-transform group-hover:scale-105"
@@ -55,7 +56,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
             <div className="p-4">
               <div className="mb-4 rounded-md overflow-hidden">
-                <img src={project.coverImage} alt={project.title} className="w-full h-full object-center" />
+                <Image src={project.coverImage} alt={project.title} className="w-full h-full object-center" />
               </div>
               <p className="mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2 mb-4">

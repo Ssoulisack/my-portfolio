@@ -1,5 +1,5 @@
 "use client";
-
+import Image from 'next/image';
 import React, { useEffect, useState } from "react";
 import {
   Calendar,
@@ -50,10 +50,12 @@ export function ExperienceCard({ experience, isLast }: ExperienceCardProps) {
       )}
       <div className="relative flex gap-6">
         <div className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-primary bg-background z-10">
-          <img
+          <Image
             src={experience.logo}
             alt={experience.company}
-            className="w-full h-full rounded-full object-cover"
+            width={40} // Explicit width
+            height={40} // Explicit height
+            className="rounded-full object-cover"
           />
         </div>
         <div className="flex-1 pb-8">
@@ -86,7 +88,10 @@ export function ExperienceCard({ experience, isLast }: ExperienceCardProps) {
         </div>
       </div>
       {isOpen && (
-        <div data-aos="flip-up" className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div
+          data-aos="flip-up"
+          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        >
           <div className="bg-background border border-border rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-background p-4 border-b border-border flex justify-between items-center">
               <div>
