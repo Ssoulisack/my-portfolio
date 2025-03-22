@@ -35,6 +35,6 @@ interface Experience {
         "Achieved 99.99% system uptime"
       ],
       technologies: ["Python", "PostgreSQL", "Redis", "Apache Kafka", "Docker"],
-      logo: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80"
+      logo: "/images/IMG_0089.JPG"
     }
   ];

@@ -24,20 +24,25 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
-      Aos.init({
-        offset: 100, // Start animation when element is 100px from viewport
-        duration: 300, // Animation duration in milliseconds
-        easing: "ease-in-out",
-        once: false, // Ensures animation runs every time element comes into view
-      });
-    }, []);
+    Aos.init({
+      offset: 100, // Start animation when element is 100px from viewport
+      duration: 300, // Animation duration in milliseconds
+      easing: "ease-in-out",
+      once: false, // Ensures animation runs every time element comes into view
+    });
+  }, []);
 
   return (
     <>
-      <div className="aspect-square overflow-hidden relative rounded-md cursor-pointer group" onClick={() => setIsOpen(true)}>
+      <div
+        className="aspect-square overflow-hidden relative rounded-md cursor-pointer group"
+        onClick={() => setIsOpen(true)}
+      >
         <Image
           src={project.coverImage}
           alt={project.title}
+          width={500} // Adjust as needed
+          height={300} // Adjust as needed
           className="w-full h-full object-cover transition-transform group-hover:scale-105"
           loading="lazy"
         />
@@ -46,17 +51,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
       {isOpen && (
-        <div data-aos="zoom-in-up" className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div
+          data-aos="zoom-in-up"
+          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        >
           <div className="bg-background border border-border rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-background p-4 border-b border-border flex justify-between items-center">
               <h2 className="text-xl font-bold">{project.title}</h2>
-              <button onClick={() => setIsOpen(false)} className="p-1 rounded-full hover:bg-secondary">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-1 rounded-full hover:bg-secondary"
+              >
                 <X size={20} />
               </button>
             </div>
             <div className="p-4">
               <div className="mb-4 rounded-md overflow-hidden">
-                <Image src={project.coverImage} alt={project.title} className="w-full h-full object-center" />
+                <Image src={project.coverImage} alt={project.title} width={500} height={300} className="w-full h-full object-center" />
               </div>
               <p className="mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2 mb-4">

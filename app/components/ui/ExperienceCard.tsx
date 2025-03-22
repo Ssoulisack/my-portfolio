@@ -53,8 +53,8 @@ export function ExperienceCard({ experience, isLast }: ExperienceCardProps) {
           <Image
             src={experience.logo}
             alt={experience.company}
-            width={40} // Explicit width
-            height={40} // Explicit height
+            width={100} // Adjust as needed
+            height={100} // Adjust as needed
             className="rounded-full object-cover"
           />
         </div>
