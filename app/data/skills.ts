@@ -1,5 +1,3 @@
-import { Languages } from "lucide-react";
-
 // Define the Level constants
 const Level = {
   BEGINNER: "Beginner",

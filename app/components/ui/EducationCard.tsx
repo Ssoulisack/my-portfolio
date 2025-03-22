@@ -1,5 +1,5 @@
 "use client";
-import { Calendar, MapPin, Award, BookOpen } from "lucide-react";
+import { Calendar, MapPin, BookOpen } from "lucide-react";
 import { Education } from '../../data/education';
 import Aos from "aos";
 import { useEffect } from "react";

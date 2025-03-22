@@ -54,8 +54,8 @@
     }
     .my-name {
       border-radius: var(--radius);
-      box-shadow: 0 0 30px var(--gray);
-      color: var(--gray);
+      box-shadow: 0 0 30px var(--pink);
+      color: var(--pink);
     }
     .my-icon {
       color: var(--dark);
@@ -65,8 +65,8 @@
       }
     }
     .typing {
-      color: var(--pink);
-      text-shadow: 0 0 5px var(--pink);
+      color: var(--gray);
+      text-shadow: 0 0 5px var(--gray);
     }
   }
 
@@ -109,9 +109,15 @@
 
     .my-name {
       border-radius: var(--radius);
-      box-shadow: 0 0 30px var(--dark);
+      box-shadow: 0 0 30px var(--gray);
       color: var(--gray);
     }
+
+    .typing {
+      color: var(--pink);
+      text-shadow: 0 0 5px var(--pink);
+    }
+
     .my-icon {
       color: var(--gray);
       &:hover {

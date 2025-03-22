@@ -1,4 +1,4 @@
-import { education, Education } from '../data/education';
+import { education } from '../data/education';
 import { EducationCard } from "./ui/EducationCard";
 export function EducationSection() {
   return (
