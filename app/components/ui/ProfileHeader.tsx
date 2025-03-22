@@ -15,13 +15,12 @@ export function ProfileHeader() {
   const { name, role, avatar, bio, coreSkills } = developerData;
   return (
     <div className="flex flex-col md:flex-row items-center md:items-start gap-6 border-b pb-6">
-      <div className="w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-primary flex-shrink-0">
+      <div className="relative w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-primary flex-shrink-0">
         <Image
           src={avatar}
           alt={name}
-          width={100} // Adjust as needed
-          height={100} // Adjust as needed
-          className="object-cover w-full h-full"
+          fill // Ensures the image covers the entire container
+          className="object-cover"
         />
       </div>
       <div className="flex-1 text-center md:text-left">
