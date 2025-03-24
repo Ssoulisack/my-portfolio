@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -38,15 +38,15 @@
     --pink: rgb(255, 141, 198);
     --gray: rgb(134, 133, 133);
     --dark: rgb(177, 177, 177);
-    .bg-nav{
+    .bg-nav {
       background: var(--white);
     }
     .card-bd {
       /* border: 2px solid var(--border-pink); */
       color: var(--gray);
-    
+
       &:hover {
-        border: none; 
+        border: none;
         box-shadow: 3px 3px 10px var(--gray);
       }
     }
@@ -75,6 +75,12 @@
       color: #000;
       border: var(--gray);
       box-shadow: 0 0 30px var(--gray);
+      
+      &:hover {
+        border: var(--pink);
+        box-shadow: 0 0 15px var(--pink);
+        color: var(--pink);
+      }
     }
   }
 
@@ -85,36 +91,36 @@
     --dark: rgb(0, 0, 0);
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
-    
+
     --muted: 340 30% 80%; /* Soft, muted pink */
     --muted-foreground: 215.4 16.3% 56.9%;
-    
+
     --accent: 340 60% 60%; /* Slightly stronger pink for accents */
     --accent-foreground: 340 70% 95%; /* Lighter pink accent text */
-  
+
     --popover: 340 70% 85%; /* Slightly darker popover background */
     --popover-foreground: 340 40% 95%; /* Light pink popover text */
-    
+
     --border: 216 34% 17%;
     --border-pink: 340 60% 60%; /* Medium pink for input fields */
     --input: 340 60% 60%; /* Medium pink for input fields */
-    
+
     --card: 224 71% 4%;
     --card-foreground: 340 50% 30%; /* Darker pink text for cards */
-    
+
     --primary: 340 70% 80%; /* Primary pink */
     --primary-foreground: 340 60% 20%; /* Darker text for primary items */
-    
+
     --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 340 70% 95%; /* Lighter pink secondary text */
-    
+
     --destructive: 0 63% 31%; /* Red for destructive actions */
     --destructive-foreground: 340 70% 95%; /* Light pink text for destructive actions */
-    
+
     --ring: 340 60% 70%; /* Ring color, matching a mid-tone pink */
-    
+
     --radius: 0.5rem; /* Consistent radius for rounded elements */
-    .bg-nav{
+    .bg-nav {
       background: #000;
     }
     .my-name {
@@ -129,9 +135,13 @@
     }
     .icon-nav {
       color: var(--white);
-      border: var(--pink);
-      box-shadow: 0 0 20px var(--pink);
+      border: var(--gray);
+      box-shadow: 0 0 15px var(--gray);
       background: #000;
+      &:hover {
+        box-shadow: 0 0 30px var(--pink);
+        color: var(--pink);
+      }
     }
 
     .my-icon {
@@ -145,19 +155,19 @@
     .card-bd {
       /* border: 2px solid var(--border-pink); */
       color: var(--pink);
-    
+
       &:hover {
-        border: none; 
+        border: none;
         box-shadow: 3px 3px 5px var(--pink);
       }
     }
-    
+
     .cursor-circle {
       border: 2px solid var(--border-pink);
       box-shadow: 0 0 10px var(--pink);
       color: var(--pink);
     }
-  }  
+  }
 }
 
 * {
