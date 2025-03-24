@@ -74,7 +74,7 @@
     .icon-nav {
       color: #000;
       border: var(--gray);
-      box-shadow: 0 0 10px var(--gray);
+      box-shadow: 0 0 30px var(--gray);
     }
   }
 
@@ -130,7 +130,7 @@
     .icon-nav {
       color: var(--white);
       border: var(--pink);
-      box-shadow: 0 0 10px var(--pink);
+      box-shadow: 0 0 20px var(--pink);
       background: #000;
     }
 
