@@ -21,15 +21,19 @@ export const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="my-name text-2xl md:text-7xl sm:text-5xl font-bold mb-8 p-2  ">
+        <h1 className="my-name text-2xl md:text-5xl sm:text-lg font-bold mb-8 p-2 sm:mx-12 md:mx-0">
           « SOULISACK DUANGVILAY »
         </h1>
+
         <div className="text-xl typing md:text-2xl h-20 mb-8">
           <TypeAnimation
             sequence={[
-              "こんにちは、私の名前はアレックスです。よろしくね！", 3000,
-              "Hi, I'm alex. Nice to meet you!", 1000,
-              "I'm backend developer.", 1000
+              "こんにちは、私の名前はアレックスです。よろしくね！",
+              3000,
+              "Hi, I'm alex. Nice to meet you!",
+              1000,
+              "I'm backend developer.",
+              1000,
             ]}
             wrapper="span"
             speed={10}
@@ -44,27 +48,25 @@ export const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <a href="https://github.com/Ssoulisack" className="my-icon transition-colors">
+          <a
+            href="https://github.com/Ssoulisack"
+            className="my-icon transition-colors"
+          >
             <GithubIcon size={30} />
           </a>
-          <a href="https://www.linkedin.com/in/sackdvl/" className="my-icon transition-colors">
+          <a
+            href="https://www.linkedin.com/in/sackdvl/"
+            className="my-icon transition-colors"
+          >
             <LinkedinIcon size={30} />
           </a>
-          <a href="soulisack2498@gmail.com" className="my-icon transition-colors">
+          <a
+            href="soulisack2498@gmail.com"
+            className="my-icon transition-colors"
+          >
             <MailIcon size={30} />
           </a>
         </motion.div>
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <div className="w-5 h-9 border-2 cursor-circle rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 border-2 border-pink-300 rounded-full" />
-        </div>
       </motion.div>
     </div>
   );

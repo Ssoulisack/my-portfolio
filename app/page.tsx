@@ -7,15 +7,15 @@ import { EducationSection } from "./components/EducationSection";
 import { ExperienceSection } from "./components/ExperienceSection";
 import Navigation from "./components/Navifations";
 import { Hero } from "./components/Hero";
-import { CustomCursor } from "./components/CustomCursor";
 import { ThemeProvider } from "./context/ThemeProvider";
 import { LenisProvider } from "./context/LenisContext";
+import SplashCursor from "./block/Animations/SplashCursor/SplashCursor";
 
 export default function Home() {
   return (
     <ThemeProvider>
       <LenisProvider>
-        <CustomCursor />
+        <SplashCursor />
         <Hero />
         <AppContent />
       </LenisProvider>
@@ -32,12 +32,8 @@ const AppContent: React.FC = () => {
       <div id="home" className="mt-8">
         <ProfileHeader />
       </div>
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 px-4 py-2 border-border bg-background w-full">
-        <Navigation />
-      </nav>
       {/* Projects */}
-      <div id="projects" className="mt-6">
+      <div id="projects" className="mt-16">
         <ProjectGrid />
       </div>
       {/* Skills */}
@@ -55,6 +51,15 @@ const AppContent: React.FC = () => {
       {/* Contact */}
       <div id="contact" className="mt-16">
         <ContactSection />
+      </div>
+      <div className="fixed bottom-0 left-0 right-0 z-50 hidden sm:block">
+        <Navigation />
+      </div>
+
+      <div className="container max-w-4xl mx-auto px-4 py-4 sm:px-8">
+        <p className="text-center text-muted-foreground text-sm">
+          © 2021 Soulisack Duangvilay. All rights reserved.
+        </p>
       </div>
     </main>
   );

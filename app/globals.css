@@ -34,10 +34,13 @@
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
+    --white: rgb(255, 255, 255);
     --pink: rgb(255, 141, 198);
     --gray: rgb(134, 133, 133);
     --dark: rgb(177, 177, 177);
-
+    .bg-nav{
+      background: var(--white);
+    }
     .card-bd {
       /* border: 2px solid var(--border-pink); */
       color: var(--gray);
@@ -68,11 +71,16 @@
       color: var(--gray);
       text-shadow: 0 0 5px var(--gray);
     }
+    .icon-nav {
+      color: #000;
+      border: var(--gray);
+      box-shadow: 0 0 10px var(--gray);
+    }
   }
 
   :root[class~="dark"] {
     --white: rgb(255, 255, 255);
-    --pink: rgb(255, 141, 198);
+    --pink: rgb(209, 61, 135);
     --gray: rgb(99, 99, 99);
     --dark: rgb(0, 0, 0);
     --background: 224 71% 4%;
@@ -106,7 +114,9 @@
     --ring: 340 60% 70%; /* Ring color, matching a mid-tone pink */
     
     --radius: 0.5rem; /* Consistent radius for rounded elements */
-
+    .bg-nav{
+      background: #000;
+    }
     .my-name {
       border-radius: var(--radius);
       box-shadow: 0 0 30px var(--gray);
@@ -116,6 +126,12 @@
     .typing {
       color: var(--pink);
       text-shadow: 0 0 5px var(--pink);
+    }
+    .icon-nav {
+      color: var(--white);
+      border: var(--pink);
+      box-shadow: 0 0 10px var(--pink);
+      background: #000;
     }
 
     .my-icon {
